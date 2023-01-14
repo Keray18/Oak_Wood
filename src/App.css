@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@500&family=Crimson+Text:ital,wght@1,700&family=Montserrat:wght@200&family=Philosopher&family=Roboto+Slab&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: aliceblue;
+}
+/* x-x-x-x--x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-NAVBAR-x--x-x-x-x-x-x-x-x-x-x-x-x-x--x-x-x-x-x-x-x-x-x-x-x-x-x-x-x */
+.navbar{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin: 1rem 0.8rem 0 0.8rem;
+  font-family: 'Roboto Slab', serif;
+  box-shadow: 5px 6px 9px 3px #a88768;
+
+}
+
+.title{
+  font-family: 'Crimson Text', serif;
+}
+.scheme{
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  align-items: center;
+}
+.three{
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  align-items: center;
+}
+.three li{
+  margin: 0 2rem;
+  list-style: none;
+
+}
+.cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scheme{
+  font-family: 'Crimson Text', serif;
+}
+
+#oak{
+  color: black;
+}
+#wood{
+  color: #a88768;
+  font-weight: 800;
+}
+.cont-act{
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart{
+  font-size: 1.5rem;
+}
+
+
+/* x-x--x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x--x-x-xCONTACT-x-x-x-x-x--x-x-x-x-x-x-x-x-x-x-x-x-x--x-x-x-xx-x-x--x-x-xx */
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem 0rem 1rem 0rem;
+}
+.cont-us{
+  font-size: 3.6rem;
+  font-family: 'Crimson Text', serif;
+}
+
+.note{
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+.image4 img{
+  width: 88vw;
+  height: 55vh;
+}
+.fav-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.same-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.same-icons h3{
+  margin-left: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+.mail{
+  margin-right: 15rem;
+  margin-left: 15rem;
+}
+.r-icons{
+  font-size: 1.5rem;
+}
+.i1{
+    border: 5px solid #a88768;
+    border-radius: 50%;
+    background-color: #a88768;
+    display: flex;
+}
+.r-icons{
+  color: ghostwhite;
+}

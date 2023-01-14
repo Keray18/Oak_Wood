@@ -1,0 +1,45 @@
+.flexing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.purchase{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.pageHeading{
+    font-size: 1rem;
+    margin: 4rem;
+    font-family: 'Crimson Text', serif;
+}
+
+.griding{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.comps{
+    margin: 2rem 3rem;
+    width: fit-content;
+    background-color: #f3f3f3;;
+}
+.comps h3{
+    padding: 1rem;
+}
+.divd{
+    display: flex;
+}
+
+.newNav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.naved li{
+    font-size: 2rem;
+    padding: 4rem 0;
+}

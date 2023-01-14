@@ -1,0 +1,184 @@
+@media(max-width:1600px) {
+    .same-icons{
+        font-size: 0.7rem;
+    }
+    .mail{
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+}
+
+@media(max-width:972px) {
+    .content{
+        width: 40vw;
+    }
+    .discription{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .boxes img{
+        width: 30vw;
+    }
+    .boxes h3{
+        margin-top: 1rem;
+    }
+    .boxes p{
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+    .r-icons{
+        font-size: 2rem;
+    }
+    .same-icons h3{
+        margin-left: 0;
+        margin-left: 0;
+        display: none;
+    }
+    .items img{
+        width: 25vw;
+        /* animation: none; */
+    }
+    .buttons h3{
+        font-size: 1rem;
+    }
+    .mid{
+        margin-left: 1rem;
+        margin-right: 1rem;
+     }
+    /* .items img:hover{
+        transform: none;
+        border: outset;
+    }  */
+
+}
+
+@media(max-width:655px) {
+    .three{
+        font-size: 0.8rem;
+    }
+    .three li{
+        margin: 0 0.3rem;
+    }
+    .cont-act span{
+        font-size: 1rem;
+        margin: 0;
+    }
+    .scheme{
+        font-size: 1.2rem;
+    }
+    .about{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .content{
+        width: 80vw;
+    }
+    .item-b{
+        margin-top: 5rem;
+    }
+    .para-line{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+    .boxes {
+        margin: 0 2rem;
+    }
+    .head {
+        font-size: 2.5rem;
+    }
+    .cont-us{
+        font-size: 2.5rem;
+    }
+    .note{
+        margin-left: 2.5rem;
+    }
+    .image4 img{
+        width: 92vw;
+        height: 52vh;
+    }
+    .product .para-line{
+        margin-right: 2rem;
+    }
+    .prod{
+        display: flex;
+        flex-direction: column;
+    }
+    .items img{
+        width: 65vw;
+    }
+    .mid{
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+}
+
+@media(max-width:400px) {
+    .three{
+        font-size: 0.5rem;
+    }
+    .three li{
+        margin: 0 0.3rem;
+    }
+    .cont-act span{
+        font-size: 0.6rem;
+    }
+    .scheme{
+        font-size: 0.8rem;
+    }
+    .content{
+        width: 94vw;
+    }
+    .item-b{
+        margin-top: 3rem;
+    }
+    .content p{
+        font-size: 0.8rem;
+        margin-top: 2rem;
+    }
+    .content h3{
+        font-size: 3.5rem;
+    }
+    .para-line{
+        font-size: 0.8rem;
+        margin-left: 3rem;
+    }
+    .discription{
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .boxes{
+        margin: 0;
+    }
+    .boxes img{
+        width: 45vw;
+    }
+    .mail{
+        margin-left: 3rem;
+        margin-right: 3rem;
+
+    }
+    .image4 img{
+        width: 85vw;
+        height: 36vh;
+    }
+    .note{
+        font-size: 0.8rem;
+        margin-left: 1rem;
+    }
+}
+@media(max-width:325px) {
+    .title{
+        font-size: 3.5rem;
+    }
+    .home-fur{
+        font-size: 1.2rem;
+    }
+}
