@@ -2,10 +2,22 @@ import React from 'react'
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { CgMail } from 'react-icons/cg';
 import { TbWorld } from 'react-icons/tb';
-import image4 from '../assets/xlast.png'
+import image4 from '../assets/xlast.jpg'
+
 
 
 function Contact() {
+
+
+    function myNumber() {
+        const board = navigator.clipboard
+        const num = "9650856160"
+        board.writeText(num).then(() => alert('Number copied'));
+      }
+
+
+
+
     return(
         <div className='contact'>
             <div className='cont-us'>
@@ -20,9 +32,9 @@ function Contact() {
             <div className='fav-icons same-icons'>
                 <div className='phone same-icons'>
                     <div className='i1'>
-                        <a href=''>
-                            <BsFillTelephoneFill className='r-icons' />
-                        </a>
+                        <span onClick={myNumber}>
+                            <BsFillTelephoneFill className='r-icons' id='clip' />
+                        </span>
                     </div>
                     <h3>+91 9650856160</h3>
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import image1 from '../assets/page1.png'
+import image1 from '../assets/page1.jpg'
 import './HandA.css' 
 
 function Home() {

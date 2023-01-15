@@ -1,37 +1,38 @@
 import React from 'react'
 import Comps from './Comps/Comps'
-import img0 from './productImages/page3-1.jpg'
+import img1 from './productImages/jacks.jpg'
 
-export default function Shoes() {
+
+export default function Clothes() {
     return(
         <div className='shoe griding'>
             <Comps 
-                img={img0}
+                img={img1}
                 name="Something"
                 price="$100"
             />
             <Comps 
-                img={img0}
+                img={img1}
                 name="Something"
                 price="$100"
             />
             <Comps 
-                img={img0}
+                img={img1}
                 name="Something"
                 price="$100"
             />
             <Comps 
-                img={img0}
+                img={img1}
                 name="Something"
                 price="$100"
             />
             <Comps 
-                img={img0}
+                img={img1}
                 name="Something"
                 price="$100"
             />
             <Comps 
-                img={img0}
+                img={img1}
                 name="Something"
                 price="$100"
             />

@@ -104,6 +104,11 @@ body{
   margin-left: 1rem;
   font-family: 'Montserrat', sans-serif;
 }
+
+#clip:hover{
+  cursor: pointer;
+}
+
 .mail{
   margin-right: 15rem;
   margin-left: 15rem;

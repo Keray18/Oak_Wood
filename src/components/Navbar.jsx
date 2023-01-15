@@ -7,6 +7,12 @@ import ProdList from './ProdList'
 
 
 function Navbar() {
+    const [count,change] = React.useState(0)
+    
+    const increase = () => {
+        change(count+1)
+        console.log()
+    }
     return(
         <div className='navbar'>
             <div className='scheme'>
@@ -19,8 +25,8 @@ function Navbar() {
             </ul>
             <div className='cont'>
                 <div className='cont-act'>
-                    <h3>0</h3>
-                    <AiOutlineShoppingCart className='cart'/>
+                    <h3>{count}</h3>
+                    <AiOutlineShoppingCart onClick={increase} className='cart'/>
                 </div>
             </div>
             

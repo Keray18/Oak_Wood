@@ -1,5 +1,5 @@
 import React from 'react'
-import image2 from '../assets/page2.png'
+import image2 from '../assets/page2.jpg'
 import './HandA.css'
 
 function About() {
@@ -8,7 +8,7 @@ function About() {
             <div className='item-a'>
                 <div className='content'>
                     <h3>About Us</h3>
-                    <p>Clothing is any item worn on the body. Typically, clothing is made of fabrics or textiles, but over time it has included garments made from animal skin and other thin sheets of materials and natural products found in the environment, put together.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
                 </div>
             </div>
             <div className='item-b'>
