@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from './components/Navbar'
-import {Routes,Route} from 'react-router-dom'
+import {Routes,Route, useLocation} from 'react-router-dom'
 import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
@@ -11,15 +11,21 @@ import Clothes from './components/Product_Components/Clothes'
 import './components/Purchase.css'
 import './App.css'
 import './Responsive.css'
+import LoginReg from "./components/LoginReg";
 
 
 function App() {
+
+  const loc = useLocation()
+
   return(
     <div className="App">
-      <Navbar />
+      {loc.pathname !== '/' && <Navbar />}
+      
       {/* <Cata /> */}
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<LoginReg />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/product' element={<Product />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />

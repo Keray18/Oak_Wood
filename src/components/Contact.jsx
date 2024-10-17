@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsFillTelephoneFill } from 'react-icons/bs';
-import { CgMail } from 'react-icons/cg';
+import { CgMail } from "react-icons/cg";
 import { TbWorld } from 'react-icons/tb';
 import image4 from '../assets/xlast.jpg'
 
