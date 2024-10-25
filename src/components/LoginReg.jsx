@@ -1,13 +1,59 @@
-import { Box, Button, Flex, FormControl, FormLabel, Input, Text, Grid, Checkbox } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import { Box, Button, Flex, FormControl, FormLabel, Input, Text, Grid, Checkbox, Select } from '@chakra-ui/react'
+import React, { useState } from 'react'
 import './LoginReg.css'
+import { MdOutlineArrowDropDown } from 'react-icons/md'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const LoginReg = () => {
-  const [isRegister, setIsRegister] = useState(false);
+  const [isRegister, setIsRegister] = useState(false)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [role, setRole] = useState('')
+  const [message, setMessage] = useState('')
+  const navigate = useNavigate()
+
 
   const toggleForm = () => {
-    setIsRegister(!isRegister);
-  };
+    setIsRegister(!isRegister)
+  }
+
+  const register = async (e) => {
+    e.preventDefault()
+
+    const data = { name, email, password, role }
+
+    try {
+      const response = await axios.post('http://localhost:8000/register', data)
+
+      if (response) {
+        setIsRegister(false)
+      }
+      
+      setMessage(response.data.message)
+    } catch(error) {
+      setMessage(error.response ? error.response.data.error: "An error occured")
+    }
+  }
+
+
+  const login = async(e) => {
+    e.preventDefault()
+
+    try {
+      const data = { email, password }
+
+    const response = await axios.post('http://localhost:8000/login', data)
+    setMessage(response.data.message)
+
+    localStorage.setItem('token', response.data.token)
+    navigate('/home')
+
+    } catch(error) {
+      setMessage(error.response) ? error.response.data.error: "Login Failed"
+    }
+  }
 
   return (
     <Grid templateColumns="1fr 1fr" h="100vh">
@@ -54,27 +100,53 @@ const LoginReg = () => {
           //  Registration UI
           <Box w="300px">
             <Text textColor='#917357' fontWeight='bold' fontStyle='italic' fontSize="2xl" mb={9}>
-              <center>Sign Up</center>
+              <Text style={{ textAlign: 'center'}}>Sign Up</Text>
             </Text>
-            <FormControl id="name" isRequired>
-              <FormLabel>Name</FormLabel>
-              <Input _placeholder={{ p: '1rem'}} borderRadius='0.5rem' variant='unstyled' borderBottom='3px solid black' placeholder="Enter your name" />
-            </FormControl>
-            <FormControl id="email" isRequired mt={9}>
-              <FormLabel>Email</FormLabel>
-              <Input _placeholder={{ p: '1rem'}} borderRadius='0.5rem' variant='unstyled' borderBottom='3px solid black' type="email" placeholder="Enter your email" />
-            </FormControl>
-            <FormControl id="password" isRequired mt={9}>
-              <FormLabel>Password</FormLabel>
-              <Input _placeholder={{ p: '1rem'}} borderRadius='0.5rem' variant='unstyled' borderBottom='3px solid black' type="password" placeholder="Enter your password" />
-            </FormControl>
-            <Button
-              w="100%"
-              mt={4}
-              colorScheme='blackAlpha'
-            >
-              Register
-            </Button>
+
+            <form onSubmit={register}>
+              <FormControl id="name" isRequired>
+                <FormLabel>Name</FormLabel>
+                <Input _placeholder={{ p: '1rem'}} borderRadius='0.5rem' variant='unstyled' 
+                borderBottom='3px solid black' placeholder="Enter your name" 
+                value={name} onChange={(e) => setName(e.target.value)}
+                />
+              </FormControl>
+
+              <Select my={5} icon={<MdOutlineArrowDropDown />} placeholder="Choose a role..." 
+              variant="filled" colorScheme="blackAlpha" required
+              value={role} onChange={(e) => setRole(e.target.value)}
+              >
+                <option>customer</option>
+                <option>admin</option>
+              </Select>
+
+              <FormControl id="eemail" isRequired>
+                <FormLabel>Email</FormLabel>
+                <Input _placeholder={{ p: '1rem'}} borderRadius='0.5rem' variant='unstyled' 
+                borderBottom='3px solid black' type="eemail" placeholder="Enter your eemail" 
+                value={email} onChange={(e) => setEmail(e.target.value)}
+                />
+              </FormControl>
+              <FormControl id="password" isRequired mt={9}>
+                <FormLabel>Password</FormLabel>
+                <Input _placeholder={{ p: '1rem'}} borderRadius='0.5rem' variant='unstyled' 
+                borderBottom='3px solid black' type="password" placeholder="Enter your password" 
+                value={password} onChange={(e) => setPassword(e.target.value)}
+                />
+              </FormControl>
+
+              
+              
+              <Button
+                w="100%"
+                mt={4}
+                colorScheme='blackAlpha'
+                type='submit'
+              >
+                Register
+              </Button>
+              {message && <Text>{message}</Text>}
+            </form>
           </Box>
         ) : (
           
@@ -83,28 +155,35 @@ const LoginReg = () => {
             <Text textColor='#917357' fontStyle='italic' fontSize="2xl" mb={5}>
               Sign In
             </Text>
-            <FormControl id="email" isRequired>
-              <Input type="email" placeholder="Enter your email" />
-            </FormControl>
-            <FormControl id="password" isRequired mt={5}>
-              <Input type="password" placeholder="Enter your password" />
-            </FormControl>
-            <Flex justify='center' alignItems='center'>
-              <Checkbox size='sm' mt={4} px={4}>Remember Me</Checkbox>
-              <Text fontSize='0.9rem' mt={4} px={4}>Forgot Password ?</Text>
-            </Flex>
-            <Button
-              w="100%"
-              mt={5}
-              colorScheme='blackAlpha'
-            >
-              Login
-            </Button>
+            <form onSubmit={login}>
+              <FormControl id="email" isRequired>
+                <Input type="email" placeholder="Enter your email" 
+                value={email} onChange={(e) => setEmail(e.target.value)}
+                />
+              </FormControl>
+              <FormControl id="password" isRequired mt={5}>
+                <Input type="password" placeholder="Enter your password" 
+                value={password} onChange={(e) => setPassword(e.target.value)}
+                />
+              </FormControl>
+              <Flex justify='center' alignItems='center'>
+                <Checkbox size='sm' mt={4} px={4}>Remember Me</Checkbox>
+                <Text fontSize='0.9rem' mt={4} px={4}>Forgot Password ?</Text>
+              </Flex>
+              <Button
+                w="100%"
+                mt={5}
+                colorScheme='blackAlpha'
+                type='submit'
+              >
+                Login
+              </Button>
+            </form>
           </Box>
         )}
       </Flex>
     </Grid>
-  );
-};
+  )
+}
 
-export default LoginReg;
+export default LoginReg
