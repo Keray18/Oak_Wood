@@ -14,6 +14,7 @@ import './Responsive.css'
 import LoginReg from "./components/LoginReg";
 
 
+
 function App() {
 
   const loc = useLocation()
@@ -33,8 +34,10 @@ function App() {
             <Route path='/product' element={<Product />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
-            {/* <Route path='/purchase/shoes' element={<Shoes />} />
-            <Route path='/purchase/clothing' element={<Clothes />} /> */}</>
+            <Route path='/purchase/shoes' element={<Shoes />} />
+            {/* <Route path='/purchase/clothing' element={<Clothes />} /> */}
+            
+            </>
         ) : (
           <Route path="*" element={<Navigate to="/" replace />} />
         )}

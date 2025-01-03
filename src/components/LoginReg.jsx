@@ -13,7 +13,9 @@ const LoginReg = () => {
   const [role, setRole] = useState('')
   const [message, setMessage] = useState('')
   const navigate = useNavigate()
+  const auth_api=import.meta.env.VITE_AUTH_API
 
+  // console.log(auth_api)
 
   const toggleForm = () => {
     setIsRegister(!isRegister)
@@ -25,7 +27,7 @@ const LoginReg = () => {
     const data = { name, email, password, role }
 
     try {
-      const response = await axios.post('http://localhost:8000/register', data)
+      const response = await axios.post(`${auth_api}/register`, data)
 
       if (response) {
         setIsRegister(false)
@@ -44,7 +46,7 @@ const LoginReg = () => {
     try {
       const data = { email, password }
 
-    const response = await axios.post('http://localhost:8000/login', data)
+    const response = await axios.post(`${auth_api}/login`, data)
     setMessage(response.data.message)
 
     localStorage.setItem('token', response.data.token)

@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.13.0",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
     "framer-motion": "^11.11.9",
     "js-cookie": "^3.0.5",
     "my-app": "file:",
