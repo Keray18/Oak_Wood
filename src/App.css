@@ -16,7 +16,12 @@ body{
   margin: 1rem 0.8rem 0 0.8rem;
   font-family: 'Roboto Slab', serif;
   box-shadow: 5px 6px 9px 3px #a88768;
-
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 .title{
@@ -30,14 +35,11 @@ body{
 }
 .three{
   display: flex;
-  justify-content: center;
-  font-size: 1.2rem;
+  gap: 2rem;
   align-items: center;
 }
 .three li{
-  margin: 0 2rem;
   list-style: none;
-
 }
 .cont{
   display: flex;
@@ -51,10 +53,12 @@ body{
 
 #oak{
   color: black;
+  transition: color 0.3s ease;
 }
 #wood{
   color: #a88768;
   font-weight: 800;
+  transition: color 0.3s ease;
 }
 .cont-act{
   border-radius: 5px;
@@ -64,8 +68,21 @@ body{
 }
 .cart{
   font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.cart:hover {
+  transform: scale(1.1);
+  color: #917357;
+}
+
+.scheme:hover #oak {
+  color: #917357;
+}
+
+.scheme:hover #wood {
+  color: #473c38;
+}
 
 /* x-x--x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x--x-x-xCONTACT-x-x-x-x-x--x-x-x-x-x-x-x-x-x-x-x-x-x--x-x-x-xx-x-x--x-x-xx */
 .contact{
@@ -125,4 +142,59 @@ body{
 }
 .r-icons{
   color: ghostwhite;
+}
+
+/* Navigation styles */
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+/* Underline effect for nav links */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: #917357;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* Hover effect */
+.nav-link:hover {
+    color: #917357;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Active link styling */
+.nav-link.active {
+    color: #917357;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    width: 100%;
+    height: 2px;
+    background-color: #917357;
+}
+
+/* Logout button styling */
+.logout-btn {
+    color: #473c38;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.logout-btn:hover {
+    color: #917357;
 }

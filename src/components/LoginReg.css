@@ -7,4 +7,76 @@ span {
     cursor: pointer;
   }
 
+/* Add new animation styles */
+.switch-form {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-container {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.form-field {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.form-field:nth-child(1) { animation-delay: 0.1s; }
+.form-field:nth-child(2) { animation-delay: 0.2s; }
+.form-field:nth-child(3) { animation-delay: 0.3s; }
+.form-field:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add styles for the sliding panels */
+.sliding-panel {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.6s ease;
+}
+
+.panel-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-out 0.3s forwards;
+}
+
+/* Button hover animation */
+.animated-button {
+    transition: all 0.3s ease !important;
+}
+
+.animated-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Form transition */
+.form-transition {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.form-transition.entering {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.form-transition.entered {
+    opacity: 1;
+    transform: translateY(0);
+}
+
   
